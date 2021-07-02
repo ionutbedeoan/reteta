@@ -47,7 +47,30 @@ input, select {
     justify-content: space-around;
     align-content: space-around;
 }
-@media only screen and (max-width: 800px) {
+.io_flexname {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    font-size: 20px;
+    position: relative;
+}
+.io_flexname > div {
+    padding: 10px;
+    min-width: 40px;
+    width: 150px;
+    text-align: center;
+    
+}
+#io_results {
+    background-color: beige;
+    border: 1px solid grey;
+}
+.io_flexname > div:nth-of-type(1) {
+    width: 150px;
+    max-width: 150px;
+    word-break:break-all;
+}
+@media only screen and (max-width: 1500px) {
     .io_total {
         display: block;
     }
@@ -75,9 +98,11 @@ button {
     cursor: pointer;
     margin: 10px auto;
 }
-table button {
+.io_flexname button {
     background-color: orangered;
     width: 100px;
     height: 30px;
     font-size: 17px;
+    position: absolute;
+    right: -100px;
 }

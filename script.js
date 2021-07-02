@@ -20,11 +20,12 @@ function sent() {
             final += '<li>'+res[i]+'</li>'
         }
         ull.innerHTML = final;
-        var list = document.createElement("tr");
-        list.innerHTML = '<td>'+d+'</td>'+'<td>'+ull.innerHTML+'</td>'+'<td>'+b+' minute'+'</td>'+'<td>'+c+'</td>';
+        var list = document.createElement("div");
+        list.className = 'io_flexname';
+        list.innerHTML = '<div class="io_re">'+d+'</div>'+'<div class="io_in">'+ull.innerHTML+'</div>'+'<div>'+b+' minute'+'</div>'+'<div>'+c+'</div>';
         list.setAttribute("id",s);
         
-        document.getElementById("io_table").appendChild(list);
+        document.getElementById("io_results").appendChild(list);
         c.innerHTML = "";
         var del = document.createElement("button");
         del.innerHTML = 'Sterge';
@@ -46,25 +47,43 @@ function deletef(s) {
     var elem = document.getElementById(`${s}`);
     elem.parentNode.removeChild(elem);
 }
-function myFunction() {
-    var input, filter, table, tr, td, td1, txtValue1, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("io_table");
-    tr = table.getElementsByTagName("tr");
-    console.log(tr);
-    for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        td1 = tr[i].getElementsByTagName("td")[1];
-        if (td || td1) {
-            txtValue = td.textContent; 
-            txtValue1 = td1.textContent;
-            if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue1.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
+
+function search() {
+    var p = document.getElementById("inputs");
+    var word = p.value.toUpperCase();
+    var first = document.querySelectorAll('#io_results > .io_flexname > .io_re');
+    var second = document.querySelectorAll('#io_results > .io_flexname > .io_in');
+    for (var i=0; i<first.length;i++) {
+        var titler = first[i].textContent;
+        var ingredr= second[i].textContent;
+        console.log("titler = " + titler + "ingredr = " + ingredr + 'i = '+ i);
+        if(titler.toUpperCase().indexOf(word) > - 1 || ingredr.toUpperCase().indexOf(word) > -1) {
+            first[i].parentElement.style.display = "";
         }
-            
+        else {
+            second[i].parentElement.style.display = 'none';
+        }
     }
 }
+
+function check() {
+    var pass = document.getElementById("ipassword").value;
+    var user = document.getElementById("itext").value;
+    if(user) {
+        console.log("intra");
+        document.getElementById("emptyuser").style.display = 'none';
+        if(pass) { 
+            console.log("intra");
+            document.getElementById("emptypass").style.display = 'none';
+            location.replace("todo.html")
+        }
+        else {
+            document.getElementById("emptypass").style.display = 'block';
+        }
+    }
+    else {
+        
+        document.getElementById("emptyuser").style.display = 'block';
+    }
+}
+

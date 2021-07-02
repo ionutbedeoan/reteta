@@ -6,28 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function check() {
-            var pass = document.getElementById("ipassword").value;
-            var user = document.getElementById("itext").value;
-            if(user) {
-                console.log("intra");
-                document.getElementById("emptyuser").style.display = 'none';
-                if(pass) { 
-                    console.log("intra");
-                    document.getElementById("emptypass").style.display = 'none';
-                    location.replace("todo.html")
-                }
-                else {
-                    document.getElementById("emptypass").style.display = 'block';
-                }
-            }
-            else {
-                
-                document.getElementById("emptyuser").style.display = 'block';
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
