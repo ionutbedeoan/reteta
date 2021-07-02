@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
     <div class="io_total">
@@ -15,12 +15,12 @@
             <div class="egal">
                 <label>Adauga titlul retetei:</label>
                 <input id="itext" type="text">
-                <p style="display: none; color: red;" id="emptyt">Trebuie sa adaugi titlul retetei</p>
+                <p style="display: none; color: rgb(255, 0, 0);" id="emptyt">Trebuie sa adaugi titlul retetei</p>
             </div>
             <div class="egal">
                 <label>Adauga ingredientele retetei:</label>
                 <input id="ingredients" type="text">
-                <p style="display: none; color: red;" id="emptyi">Trebuie sa adaugi ingredientele retetei</p>
+                <p style="display: none; color: rgb(255, 0, 0);" id="emptyi">Trebuie sa adaugi ingredientele retetei</p>
             </div>
             <div class="egal">
                 <label>Adauga timpul de preparare:</label>
@@ -34,12 +34,12 @@
                     <option value="Dificil">Dificil</option>
                 </select>
             </div>
-            <button onclick="sent()">Sent</button>
+            <button id="trimite">Sent</button>
         </div>
-        <div id="io_lists">
+        <div id="ioLists">
             <div class="searchdiv">
                 <label>Cauta:</label>
-                <input type="text" id='inputs' onkeyup="search()">
+                <input type="text" id='inputs'>
             </div>
             <div id="io_results">
                 <div class='io_flexname'>
@@ -54,7 +54,7 @@
         </div>
     </div>
     
-    
+    <script src="script.js"></script>
 </body>
 
 </html>

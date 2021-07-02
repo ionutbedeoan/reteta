@@ -43,6 +43,9 @@ function sent() {
     }
 }
 
+document.getElementById("trimite").addEventListener("click", sent);
+
+
 function deletef(s) {
     var elem = document.getElementById(`${s}`);
     elem.parentNode.removeChild(elem);
@@ -56,16 +59,14 @@ function search() {
     for (var i=0; i<first.length;i++) {
         var titler = first[i].textContent;
         var ingredr= second[i].textContent;
-        console.log("titler = " + titler + "ingredr = " + ingredr + 'i = '+ i);
         if(titler.toUpperCase().indexOf(word) > - 1 || ingredr.toUpperCase().indexOf(word) > -1) {
             first[i].parentElement.style.display = "";
-        }
-        else {
+        }else {
             second[i].parentElement.style.display = 'none';
         }
     }
 }
-
+document.getElementById("inputs").addEventListener("keyup", search);
 function check() {
     var pass = document.getElementById("ipassword").value;
     var user = document.getElementById("itext").value;

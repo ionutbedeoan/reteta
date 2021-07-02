@@ -24,7 +24,7 @@ ul {
 }
 
 tr:nth-child(even) {
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 input, select {
     font-size: 18px;
@@ -35,9 +35,9 @@ input, select {
 .container {
     width: 500px;
     height: 480px;
-    border: 1px solid black;
+    border: 1px solid #000000;
     border-radius: 20px;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
     min-height: 200px;
     text-align: center;
     padding: 10px;
@@ -62,8 +62,8 @@ input, select {
     
 }
 #io_results {
-    background-color: beige;
-    border: 1px solid grey;
+    background-color: #f5f5dc;
+    border: 1px solid #808080;
 }
 .io_flexname > div:nth-of-type(1) {
     width: 150px;
@@ -90,8 +90,8 @@ label {
 button {
     width: 150px;
     height: 40px;
-    background-color: greenyellow;
-    color: black;
+    background-color: #adff2f;
+    color:#000000;
     font-size: 20px;
     border-radius: 30px;
     border: 1px solid transparent;
@@ -99,7 +99,7 @@ button {
     margin: 10px auto;
 }
 .io_flexname button {
-    background-color: orangered;
+    background-color: #ff4500;
     width: 100px;
     height: 30px;
     font-size: 17px;
