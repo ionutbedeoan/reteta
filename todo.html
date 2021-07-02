@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="io_total">
+        <div class="container">
+            <h1>Adauga o reteta</h1>
+            <div class="egal">
+                <label>Adauga titlul retetei:</label>
+                <input id="itext" type="text">
+                <p style="display: none; color: red;" id="emptyt">Trebuie sa adaugi titlul retetei</p>
+            </div>
+            <div class="egal">
+                <label>Adauga ingredientele retetei:</label>
+                <input id="ingredients" type="text">
+                <p style="display: none; color: red;" id="emptyi">Trebuie sa adaugi ingredientele retetei</p>
+            </div>
+            <div class="egal">
+                <label>Adauga timpul de preparare:</label>
+                <input id="time" type="number" value="15" min="15" step="15">
+            </div>
+            <div class="egal">
+                <label>Alege nivelul de dificultate al retetei</label>
+                <select id="level">
+                    <option value="Usor">Usor</option>
+                    <option value="Mediu">Mediu</option>
+                    <option value="Dificil">Dificil</option>
+                </select>
+            </div>
+            <button onclick="sent()">Sent</button>
+        </div>
+        <div id="io_lists">
+            <div class="searchdiv">
+                <label>Cauta:</label>
+                <input type="text" id='myInput' onkeyup="myFunction()">
+            </div>
+            <table id="io_table">
+                <tr>
+                  <th>Titlu reteta</th>
+                  <th>Ingrediente</th>
+                  <th>Timp de preparare</th>
+                  <th>Nivel de dificultate</th>
+                </tr>
+
+           
+              </table>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>
