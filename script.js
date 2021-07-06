@@ -32,6 +32,11 @@ function sent() {
         var p = document.getElementById(`${s}`);
         p.appendChild(del);
         del.setAttribute("onclick",`deletef('${s}')`);
+        var send = document.createElement("button");
+        send.className = 'favorit';
+        send.innerHTML = 'Favorit';
+        send.setAttribute("onclick",`addf('${s}')`);
+        p.appendChild(send);
         s++;
         }
         else {
@@ -42,13 +47,28 @@ function sent() {
         document.getElementById("emptyt").style.display = "block";
     }
 }
-
+function open() {
+    var c = document.getElementById("modal");
+    if(c.style.display =='none') {
+        c.style.display = 'block';
+    }
+    else {
+        c.style.display = 'none';
+    }
+    
+}
 document.getElementById("trimite").addEventListener("click", sent);
-
+document.getElementById("myRecipe").addEventListener("click", open);
 
 function deletef(s) {
     var elem = document.getElementById(`${s}`);
     elem.parentNode.removeChild(elem);
+}
+function addf(s) {
+    var elem = document.getElementById(`${s}`);
+    var d = document.getElementById("modal");
+    var clone = elem.cloneNode(true);
+    d.appendChild(clone);
 }
 
 function search() {
