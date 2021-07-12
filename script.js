@@ -28,6 +28,7 @@ function sent() {
         document.getElementById("io_results").appendChild(list);
         c.innerHTML = "";
         var del = document.createElement("button");
+        del.className = 'delclass'
         del.innerHTML = 'Sterge';
         var p = document.getElementById(`${s}`);
         p.appendChild(del);
@@ -48,7 +49,7 @@ function sent() {
     }
 }
 function open() {
-    var c = document.getElementById("modal");
+    var c = document.getElementById("fade");
     if(c.style.display =='none') {
         c.style.display = 'block';
     }
@@ -59,6 +60,7 @@ function open() {
 }
 document.getElementById("trimite").addEventListener("click", sent);
 document.getElementById("myRecipe").addEventListener("click", open);
+document.getElementById("closebtn").addEventListener("click", () => document.getElementById("fade").style.display = 'none');
 
 function deletef(s) {
     var elem = document.getElementById(`${s}`);
