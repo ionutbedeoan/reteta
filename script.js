@@ -21,9 +21,15 @@ function sent() {
         }
         ull.innerHTML = final;
         var list = document.createElement("div");
+        localStorage.setItem("locald", d);
+        localStorage.setItem("localul", ull.innerHTML);
+        localStorage.setItem("localb", b);
+        localStorage.setItem("localc", c);
+       
         list.className = 'io_flexname';
-        list.innerHTML = '<div class="io_re">'+d+'</div>'+'<div class="io_in">'+ull.innerHTML+'</div>'+'<div>'+b+' minute'+'</div>'+'<div>'+c+'</div>';
+        list.innerHTML = '<div class="io_re">'+localStorage.getItem("locald")+'</div>'+'<div class="io_in">'+localStorage.getItem("localul")+'</div>'+'<div>'+localStorage.getItem("localb")+' minute'+'</div>'+'<div>'+localStorage.getItem("localc")+'</div>';
         list.setAttribute("id",s);
+      
         
         document.getElementById("io_results").appendChild(list);
         c.innerHTML = "";
@@ -38,6 +44,10 @@ function sent() {
         send.innerHTML = 'Favorit';
         send.setAttribute("onclick",`addf('${s}')`);
         p.appendChild(send);
+
+        var final = final + p.innerHTML;
+        console.log("final =" + final);
+        localStorage.setItem("key", final);
         s++;
         }
         else {
@@ -48,6 +58,21 @@ function sent() {
         document.getElementById("emptyt").style.display = "block";
     }
 }
+
+function testeaza() {
+        if(localStorage.getItem("key")) {
+        
+            var c = localStorage.getItem("key");
+            var d = c;
+            var create = document.createElement('div');
+            create.innerHTML = d.trim();
+            create.className = 'io_flexname';
+            document.getElementById("io_results").appendChild(create);
+    
+        }
+
+}
+window.onload = testeaza();
 function open() {
     var c = document.getElementById("fade");
     if(c.style.display =='none') {
@@ -58,9 +83,17 @@ function open() {
     }
     
 }
+function test(event) {
+    if (event.keyCode == 27) { 
+        document.getElementById("fade").style.display = 'none'
+    }
+}
 document.getElementById("trimite").addEventListener("click", sent);
 document.getElementById("myRecipe").addEventListener("click", open);
 document.getElementById("closebtn").addEventListener("click", () => document.getElementById("fade").style.display = 'none');
+document.addEventListener("keydown", test );
+
+
 
 function deletef(s) {
     var elem = document.getElementById(`${s}`);
